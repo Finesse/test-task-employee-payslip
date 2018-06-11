@@ -1,0 +1,19 @@
+{
+  "name": "starlight-employee-payslip",
+  "version": "0.0.0",
+  "description": "A React/Nextjs test task",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Surgie Finesse",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^6.0.3",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0"
+  }
+}
