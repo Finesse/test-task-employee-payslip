@@ -12,8 +12,11 @@
   "author": "Surgie Finesse",
   "license": "MIT",
   "dependencies": {
+    "@zeit/next-css": "^0.2.0",
+    "moment": "^2.22.2",
     "next": "^6.0.3",
     "react": "^16.4.0",
+    "react-datepicker": "^1.5.0",
     "react-dom": "^16.4.0",
     "react-form": "^3.5.5"
   }

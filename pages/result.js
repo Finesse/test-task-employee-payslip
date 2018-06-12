@@ -1,14 +1,18 @@
 import Link from 'next/link';
+import React from 'react';
+import EmployeeContext from '../contexts/EmployeeData';
 
-const Result = ({name}) => <div>
-	<Link href="/"><a>Go back</a></Link>
-	<div>Your name is {name}</div>
-</div>;
-
-Result.getInitialProps = ({query}) => {
-	return {
-		name: query.name
-	};
-};
-
-export default Result;
+/**
+ * The result page
+ */
+export default function ResultPage()
+{
+  return <EmployeeContext.Consumer>
+    {({employee}) => (
+      <div>
+        <Link href="/"><a>Go back</a></Link>
+        <div>Your name is {employee.firstName} {employee.lastName}</div>
+      </div>
+    )}
+  </EmployeeContext.Consumer>;
+}

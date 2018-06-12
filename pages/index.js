@@ -1,24 +1,17 @@
 import Head from 'next/head';
 import Router from 'next/router'
-import {Form, Text} from 'react-form';
+import EmployeeForm from '../components/EmployeeForm';
 
-const handleSubmit = values => Router.push({
-	pathname: '/result',
-	query: values
-});
-
-export default () => <div>
-	<Head>
-		<title>Employee payslip for a flexible pay cycle</title>
-	</Head>
-	<h1>Welcome to next.js!</h1>
-	<Form onSubmit={handleSubmit}>
-		{({submitForm}) => (
-			<form onSubmit={submitForm}>
-				Your name:
-				<Text field="name"/>
-				<button>Calculate</button>
-			</form>
-		)}
-	</Form>
-</div>;
+/**
+ * The index page with the form
+ */
+export default function IndexPage()
+{
+  return <div>
+    <Head>
+      <title>Employee payslip calculator</title>
+    </Head>
+    <h1>Employee payslip calculator</h1>
+    <EmployeeForm onSubmit={() => Router.push({pathname: '/result'})}/>
+  </div>;
+}

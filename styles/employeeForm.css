@@ -1,0 +1,17 @@
+.employeeForm_grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+	grid-gap: 0.8em 1.6em;
+}
+.employeeForm_footer {
+	margin-top: 0.8em;
+}
+.employeeForm_input {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+}
+.employeeForm_error {
+	font-size: 85%;
+	color: red;
+}
