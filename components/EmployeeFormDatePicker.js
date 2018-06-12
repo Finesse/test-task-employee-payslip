@@ -5,6 +5,9 @@ import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 import '../styles/employeeForm.css';
 
+/**
+ * Styled date picker for the employee form
+ */
 export default function EmployeeFormDatePicker({label, validate, field})
 {
   return <Field field={field} validate={validate}>

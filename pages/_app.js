@@ -9,23 +9,23 @@ import EmployeeContext from '../contexts/EmployeeData';
  */
 export default class MyApp extends App
 {
-	/**
-	 * @inheritDoc
-	 */
-	state = {
-		employeeContext: {
-			employee: null,
-			setEmployee: this.setEmployee.bind(this),
+  /**
+   * @inheritDoc
+   */
+  state = {
+    employeeContext: {
+      employee: null,
+      setEmployee: this.setEmployee.bind(this),
       test: true
-		}
-	};
+    }
+  };
 
   /**
    * Sets the new employee data
    *
    * @param {{}|null} employee
    */
-	setEmployee(employee)
+  setEmployee(employee)
   {
     this.setState({
       employeeContext: {
@@ -35,19 +35,19 @@ export default class MyApp extends App
     });
   }
 
-	/**
-	 * @inheritDoc
-	 */
-	render()
-	{
-		const {Component, pageProps} = this.props;
+  /**
+   * @inheritDoc
+   */
+  render()
+  {
+    const {Component, pageProps} = this.props;
 
-		return (
+    return (
       <Container>
         <EmployeeContext.Provider value={this.state.employeeContext}>
           <Component {...pageProps} />
         </EmployeeContext.Provider>
       </Container>
-		);
-	}
+    );
+  }
 }

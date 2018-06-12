@@ -2,6 +2,9 @@ import React from 'react';
 import {Field} from 'react-form';
 import '../styles/employeeForm.css';
 
+/**
+ * Styled text field the employee form
+ */
 export default function EmployeeFormTextField({label, validate, field, ...props})
 {
   return <Field field={field} validate={validate}>
