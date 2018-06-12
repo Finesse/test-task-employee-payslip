@@ -1,6 +1,6 @@
 import App, {Container} from 'next/app'
 import React from 'react';
-import EmployeesList from '../contexts/EmployeesList';
+import PayslipsContext from '../contexts/PayslipsList';
 
 /**
  * Custom application
@@ -13,31 +13,31 @@ export default class MyApp extends App
    * @inheritDoc
    */
   state = {
-    lastEmployeeId: 0,
-    employeeContext: {
-      employees: [],
-      addEmployee: this.addEmployee.bind(this)
+    lastPayslipId: 0,
+    payslipsContext: {
+      payslips: [],
+      addPayslip: this.addPayslip.bind(this)
     }
   };
 
   /**
-   * Adds a new employee data to the employees list
+   * Adds a new payslip to the payslips list
    *
-   * @param {{}} employee
+   * @param {Payslip} payslip
    */
-  addEmployee(employee)
+  addPayslip(payslip)
   {
     // Ids are used to optimize the React performance in the views
-    const employeeId = this.state.lastEmployeeId + 1;
+    const payslipId = this.state.lastPayslipId + 1;
 
-    const employees = [
-      {...employee, id: employeeId},
-      ...this.state.employeeContext.employees
+    const payslips = [
+      {...payslip, id: payslipId},
+      ...this.state.payslipsContext.payslips
     ];
 
     this.setState({
-      lastEmployeeId: employeeId,
-      employeeContext: {...this.state.employeeContext, employees}
+      lastPayslipId: payslipId,
+      payslipsContext: {...this.state.payslipsContext, payslips}
     });
   }
 
@@ -50,9 +50,9 @@ export default class MyApp extends App
 
     return (
       <Container>
-        <EmployeesList.Provider value={this.state.employeeContext}>
+        <PayslipsContext.Provider value={this.state.payslipsContext}>
           <Component {...pageProps} />
-        </EmployeesList.Provider>
+        </PayslipsContext.Provider>
       </Container>
     );
   }

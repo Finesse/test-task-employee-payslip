@@ -1,11 +1,7 @@
 import React, {PureComponent} from 'react';
-import calculatePayslip from '../../models/calculatePayslip';
 
 /**
- * Payslip for an employee data.
- *
- * Actually, this component can't be pure, because the employee prop is an object.
- * But we have arranged that our functions are pure, so the object are not changed and pure component won't cause problems.
+ * Payslip for an employee data
  */
 export default class PayslipRow extends PureComponent
 {
@@ -14,23 +10,14 @@ export default class PayslipRow extends PureComponent
    */
   render()
   {
-    const {
-      name,
-      payPeriod,
-      grossIncome,
-      incomeTax,
-      netIncome,
-      superAmount
-    } = calculatePayslip(this.props.employee);
-
     // The list of cells must correspond the list of head cells in the payslips table
     return <tr>
-      <td>{name}</td>
-      <td>{payPeriod.start.format('DD MMMM')} – {payPeriod.end.format('DD MMMM')}</td>
-      <td>{grossIncome}</td>
-      <td>{incomeTax}</td>
-      <td>{netIncome}</td>
-      <td>{superAmount}</td>
+      <td>{this.props.name}</td>
+      <td>{this.props.payPeriodStart.format('DD MMMM')} – {this.props.payPeriodEnd.format('DD MMMM')}</td>
+      <td style={{textAlign: 'right'}}>{this.props.grossIncome}</td>
+      <td style={{textAlign: 'right'}}>{this.props.incomeTax}</td>
+      <td style={{textAlign: 'right'}}>{this.props.netIncome}</td>
+      <td style={{textAlign: 'right'}}>{this.props.superAmount}</td>
     </tr>;
   }
 }

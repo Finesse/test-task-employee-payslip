@@ -1,6 +1,17 @@
 import moment from 'moment';
 
 /**
+ * @typedef {{}} Payslip
+ * @property {string} name Employee name
+ * @property {moment.Moment} payPeriodStart Pay period start
+ * @property {moment.Moment} payPeriodEnd Pay period end
+ * @property {number} grossIncome Gross income
+ * @property {number} incomeTax Income tax
+ * @property {number} netIncome Net income
+ * @property {number} superAmount Super amount
+ */
+
+/**
  * Calculates a payslip
  *
  * @param {string} firstName Employee first name
@@ -8,14 +19,7 @@ import moment from 'moment';
  * @param {number} annualSalary Annual salary
  * @param {number} superRate Super rate
  * @param {moment.Moment} paymentStartDate Payment start date
- * @return {{
- *  name: string,
- *  payPeriod: {start: moment.Moment, end: moment.Moment},
- *  grossIncome: number,
- *  incomeTax: number,
- *  netIncome: number,
- *  superAmount: number
- * }}
+ * @return {Payslip}
  */
 export default function calculatePayslip({
   firstName,
@@ -30,10 +34,8 @@ export default function calculatePayslip({
 
   return {
     name: `${firstName} ${lastName}`,
-    payPeriod: {
-      start: paymentStartDate,
-      end: moment(paymentStartDate).add(1, 'months').subtract(1, 'day')
-    },
+    payPeriodStart: paymentStartDate,
+    payPeriodEnd: moment(paymentStartDate).add(1, 'months').subtract(1, 'day'),
     grossIncome: monthlyIncome,
     incomeTax: monthlyTax,
     netIncome: monthlyIncome - monthlyTax,

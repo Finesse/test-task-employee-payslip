@@ -1,21 +1,21 @@
 import React, {PureComponent} from 'react';
-import EmployeesList from '../../contexts/EmployeesList';
+import PayslipsContext from '../../contexts/PayslipsList';
 import PayslipRow from './PayslipRow';
 import '../../styles/payslipsTable.css';
 
 /**
  * List of employees payslips
  */
-export default class Index extends PureComponent
+export default class PayslipsList extends PureComponent
 {
   render()
   {
-    return <EmployeesList.Consumer>
-      {({employees}) => {
-        if (!employees.length) {
+    return <PayslipsContext.Consumer>
+      {({payslips}) => {
+        if (!payslips.length) {
           return <p>
-            No employee data is set.
-            Please go to the main page and add an employee data.
+            No payslips have been calculated.
+            Please go to the main page and add an employee data to calculate a payslip.
           </p>;
         }
 
@@ -24,19 +24,19 @@ export default class Index extends PureComponent
             <tr>
               <th>Name</th>
               <th>Pay period</th>
-              <th>Gross income</th>
-              <th>Income tax</th>
-              <th>Net income</th>
-              <th>Super amount</th>
+              <th style={{textAlign: 'right'}}>Gross income</th>
+              <th style={{textAlign: 'right'}}>Income tax</th>
+              <th style={{textAlign: 'right'}}>Net income</th>
+              <th style={{textAlign: 'right'}}>Super amount</th>
             </tr>
           </thead>
           <tbody>
-            {employees.map(employee => (
-              <PayslipRow key={employee.id} employee={employee}/>
+            {payslips.map(payslip => (
+              <PayslipRow key={payslip.id} {...payslip}/>
             ))}
           </tbody>
         </table>;
       }}
-    </EmployeesList.Consumer>;
+    </PayslipsContext.Consumer>;
   }
 }

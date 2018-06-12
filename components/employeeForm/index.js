@@ -3,7 +3,8 @@ import {Form} from 'react-form';
 import TextField from './TextField';
 import DatePicker from './DatePicker';
 import {validateAnnualSalary, validateFirstName, validateLastName, validateSuperRate, validatePaymentStartDate} from '../../models/validators';
-import EmployeesList from '../../contexts/EmployeesList';
+import PayslipsContext from '../../contexts/PayslipsList';
+import calculatePayslip from '../../models/calculatePayslip';
 import moment from 'moment';
 import '../../styles/employeeForm.css';
 
@@ -14,12 +15,13 @@ import '../../styles/employeeForm.css';
  */
 export default function EmployeeForm({onSubmit})
 {
-  return <EmployeesList.Consumer>
-    {({employee, addEmployee}) => (
+  return <PayslipsContext.Consumer>
+    {({addPayslip}) => (
       <Form onSubmit={values => {
         const employee = formValuesToEmployee(values);
-        addEmployee(employee);
-        onSubmit(employee);
+        const payslip = calculatePayslip(employee);
+        addPayslip(payslip);
+        onSubmit();
       }}>
         {({submitForm}) => (
           <form className="employeeForm" onSubmit={submitForm}>
@@ -37,7 +39,7 @@ export default function EmployeeForm({onSubmit})
         )}
       </Form>
     )}
-  </EmployeesList.Consumer>;
+  </PayslipsContext.Consumer>;
 }
 
 /**
