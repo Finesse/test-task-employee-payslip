@@ -1,7 +1,7 @@
 {
   "name": "starlight-employee-payslip",
-  "version": "0.0.0",
-  "description": "A React/Nextjs test task",
+  "version": "0.0.1",
+  "description": "A React/Next.js test task for Starlight Group",
   "main": "index.js",
   "scripts": {
     "dev": "next",
@@ -9,6 +9,16 @@
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Finesse/starlight-employee-payship.git"
+  },
+  "keywords": [
+    "react",
+    "next.js",
+    "application",
+    "test-task"
+  ],
   "author": "Surgie Finesse",
   "license": "MIT",
   "dependencies": {
