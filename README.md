@@ -68,7 +68,7 @@ The pure business logic code is located in the [models](models) directory.
 The form input data is passed to the result page using the [React Context API](https://reactjs.org/docs/context.html).
 The [pages/_app.js](pages/_app.js) file, which contains a parent React component for all the pages, creates a context provider.
 The [form on the index page](components/EmployeeForm.js) consumes the context, calls it's function to set an employee data to the context and just redirects the user.
-The [result page](pages/result.js) also consumes the context and uses it's data to display a payslip. 
+In its turn, the [result page](pages/result.js) consumes the context and uses it's data to display a payslip. 
 
 The [form component](components/EmployeeForm.js) uses the [React Form](https://react-form.js.org/) package to control the inputs state.  
 
@@ -80,4 +80,4 @@ To start a development version of the application, run
 npm run dev
 ```
 
-It will enable hot reload so when you edit a file, the change will appear on the browser page without a page reload.
+It will enable hot reload so when you edit a file, changes will appear on the browser page without a page reload.

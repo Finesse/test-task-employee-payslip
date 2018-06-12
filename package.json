@@ -19,7 +19,10 @@
     "application",
     "test-task"
   ],
-  "author": "Surgie Finesse",
+  "author": {
+    "name": "Surgie Finesse",
+    "email": "finesserus@gmail.com"
+  },
   "license": "MIT",
   "dependencies": {
     "@zeit/next-css": "^0.2.0",
