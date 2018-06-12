@@ -11,17 +11,18 @@ import '../../styles/employeeForm.css';
 /**
  * A form for filling an employee data.
  *
- * Saves it's data to the employee data context when submitted.
+ * When the form is submitted, it calculates the payslip and puts it to the payslips context.
  */
 export default function EmployeeForm({onSubmit})
 {
   return <PayslipsContext.Consumer>
     {({addPayslip}) => (
-      <Form onSubmit={values => {
+      <Form onSubmit={(values, event, {resetAll}) => {
         const employee = formValuesToEmployee(values);
         const payslip = calculatePayslip(employee);
         addPayslip(payslip);
-        onSubmit();
+        if (onSubmit) onSubmit();
+        resetAll();
       }}>
         {({submitForm}) => (
           <form className="employeeForm" onSubmit={submitForm}>
