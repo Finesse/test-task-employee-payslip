@@ -1,7 +1,6 @@
 import App, {Container} from 'next/app'
-import React from 'react'
+import React from 'react';
 import EmployeeContext from '../contexts/EmployeeData';
-import '../styles/common.css';
 
 /**
  * Custom application
@@ -45,11 +44,9 @@ export default class MyApp extends App
 
 		return (
       <Container>
-        <div className="app">
-          <EmployeeContext.Provider value={this.state.employeeContext}>
-						<Component {...pageProps} />
-          </EmployeeContext.Provider>
-        </div>
+        <EmployeeContext.Provider value={this.state.employeeContext}>
+          <Component {...pageProps} />
+        </EmployeeContext.Provider>
       </Container>
 		);
 	}
