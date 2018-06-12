@@ -12,7 +12,7 @@ The complete task is located here: https://docs.google.com/document/d/13Wl2klo5-
 2. Open a terminal and go to an empty directory where you want to install the application.
 3. Download the code
     ```bash
-    git clone https://github.com/Finesse/react-friendly-input.git .
+    git clone https://github.com/Finesse/starlight-employee-payslip.git .
     ```
 4. Install the dependencies
     ```bash
