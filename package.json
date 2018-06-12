@@ -1,6 +1,6 @@
 {
   "name": "starlight-employee-payslip",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A React/Next.js test task for Starlight Group",
   "main": "index.js",
   "scripts": {
