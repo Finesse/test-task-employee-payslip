@@ -23,13 +23,13 @@ The complete task is located here: https://docs.google.com/document/d/13Wl2klo5-
     npm run build
     npm run start
     ```
-6. Open http://localhost:3000 in your browser
+6. Open http://localhost:3000 in your browser.
 7. Press <kbd>Ctrl</kbd>+<kbd>C</kbd> in the terminal to stop the application.
 
 
 ## Example inputs and outputs
 
-### 1
+### Example 1
 
 #### Input
 
@@ -43,7 +43,7 @@ The complete task is located here: https://docs.google.com/document/d/13Wl2klo5-
 | ------------ | ------------------- | ------------ | ---------- | ---------- | ------------ |
 | Andrew Smith | 01 March – 31 March | 5004         | 922        | 4082       | 450          |
 
-### 2
+### Example 2
 
 #### Input
 
