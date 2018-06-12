@@ -1,0 +1,31 @@
+.payslipsTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+.payslipsTable td,
+.payslipsTable th {
+    padding: 0.4em 0.6em;
+    text-align: left;
+}
+.payslipsTable td:first-child,
+.payslipsTable th:first-child {
+    padding-left: 0;
+}
+.payslipsTable td:last-child,
+.payslipsTable th:last-child {
+    padding-right: 0;
+}
+.payslipsTable thead tr:last-child td,
+.payslipsTable thead tr:last-child th {
+    border-bottom: solid 1px #555;
+}
+@media (max-width: 46em) {
+    .payslipsTable {
+        font-size: 85%;
+    }
+}
+@media (max-width: 30em) {
+    .payslipsTable {
+        font-size: 70%;
+    }
+}

@@ -1,6 +1,6 @@
 import App, {Container} from 'next/app'
 import React from 'react';
-import EmployeeContext from '../contexts/EmployeeData';
+import EmployeesList from '../contexts/EmployeesList';
 
 /**
  * Custom application
@@ -13,25 +13,31 @@ export default class MyApp extends App
    * @inheritDoc
    */
   state = {
+    lastEmployeeId: 0,
     employeeContext: {
-      employee: null,
-      setEmployee: this.setEmployee.bind(this),
-      test: true
+      employees: [],
+      addEmployee: this.addEmployee.bind(this)
     }
   };
 
   /**
-   * Sets the new employee data
+   * Adds a new employee data to the employees list
    *
-   * @param {{}|null} employee
+   * @param {{}} employee
    */
-  setEmployee(employee)
+  addEmployee(employee)
   {
+    // Ids are used to optimize the React performance in the views
+    const employeeId = this.state.lastEmployeeId + 1;
+
+    const employees = [
+      {...employee, id: employeeId},
+      ...this.state.employeeContext.employees
+    ];
+
     this.setState({
-      employeeContext: {
-        ...this.state.employeeContext,
-        employee
-      }
+      lastEmployeeId: employeeId,
+      employeeContext: {...this.state.employeeContext, employees}
     });
   }
 
@@ -44,9 +50,9 @@ export default class MyApp extends App
 
     return (
       <Container>
-        <EmployeeContext.Provider value={this.state.employeeContext}>
+        <EmployeesList.Provider value={this.state.employeeContext}>
           <Component {...pageProps} />
-        </EmployeeContext.Provider>
+        </EmployeesList.Provider>
       </Container>
     );
   }
