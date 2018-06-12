@@ -10,7 +10,7 @@ export default function IndexPage()
 {
   return (
     <Layout title="Employee payslip calculator">
-      <EmployeeForm onSubmit={() => Router.push({pathname: '/result'})}/>
+      <EmployeeForm onSubmit={() => Router.push('/result')}/>
     </Layout>
   );
 }
