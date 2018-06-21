@@ -3,7 +3,7 @@
 This is an application where user can input employee data (annual salary, super rate, etc.) and get a payslip on a separate page.
 The application is a single page application made on top of [React](http://reactjs.org) and [Next.js](http://nextjs.org/). 
 
-The complete task is located here: https://docs.google.com/document/d/13Wl2klo5-PbtMJDysFZc6xGnbxvs7GF7tYrA6omhqI8
+The complete task is located here: https://docs.google.com/document/d/1gSB-NJh4yIPLnEMNVBTawo7444rZkfIVyq0icxWEv9s
 
 
 ## How to start
